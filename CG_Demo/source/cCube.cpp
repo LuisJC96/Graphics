@@ -22,9 +22,9 @@ Cube::Cube(float side, bool use_mipmaps)
 	GLfloat texture_data[TEX_SIDE][TEX_SIDE][3];
 	for (int u = 0; u < TEX_SIDE; u++) {
 		for (int v = 0; v < TEX_SIDE; v++) {
-			texture_data[u][v][0] - (GLfloat)rand() / RAND_MAX;
-			texture_data[u][v][1] - (GLfloat)rand() / RAND_MAX;
-			texture_data[u][v][2] - (GLfloat)rand() / RAND_MAX;
+			texture_data[u][v][0] = (GLfloat)rand() / RAND_MAX;
+			texture_data[u][v][1] = (GLfloat)rand() / RAND_MAX;
+			texture_data[u][v][2] = (GLfloat)rand() / RAND_MAX;
 		}
 	}
 	if (use_mipmaps) {
@@ -111,13 +111,15 @@ void Cube::draw(void)
 		glTexCoord2f(1.0f, 0.0f);
 		glVertex3f(-hside, -hside, -hside);
 
-		glNormal3f(0.0f, 0.0f, -1.0f);//6
+		glNormal3f(0.0f, 0.0f, -1.0f);//8
 		glTexCoord2f(1.0f, 1.0f);
+		glVertex3f(-hside, hside, -hside);
+
+		glNormal3f(0.0f, 0.0f, -1.0f);//6
+		glTexCoord2f(0.0f, 1.0f);
 		glVertex3f(hside, hside, -hside);
 
-		glNormal3f(0.0f, 0.0f, -1.0f);//8
-		glTexCoord2f(0.0f, 1.0f);
-		glVertex3f(-hside, hside, -hside);
+		
 
 	}
 	glEnd();
@@ -131,13 +133,13 @@ void Cube::draw(void)
 		glTexCoord2f(1.0f, 0.0f);
 		glVertex3f(-hside, -hside, hside);
 
-		glNormal3f(-1.0f, 0.0f, 0.0f);//8
-		glTexCoord2f(1.0f, 1.0f);
-		glVertex3f(-hside, hside, -hside);
-
 		glNormal3f(-1.0f, 0.0f, 0.0f);//4
-		glTexCoord2f(0.0f, 1.0f);
+		glTexCoord2f(1.0f, 1.0f);
 		glVertex3f(-hside, hside, hside);
+
+		glNormal3f(-1.0f, 0.0f, 0.0f);//8
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(-hside, hside, -hside);
 
 	}
 	glEnd();
@@ -145,20 +147,20 @@ void Cube::draw(void)
 	{
 
 		glNormal3f(0.0f, 1.0f, 0.0f);//4
-		glTexCoord2f(0.0f, 1.0f);
+		glTexCoord2f(0.0f, 0.0f);
 		glVertex3f(-hside, hside, hside);
 
 		glNormal3f(0.0f, 1.0f, 0.0f);//3
 		glTexCoord2f(1.0f, 0.0f);
 		glVertex3f(hside, hside, hside);
 
-		glNormal3f(0.0f, 1.0f, 0.0f);//8
-		glTexCoord2f(1.0f, 1.0f);
-		glVertex3f(-hside, hside, -hside);
-
 		glNormal3f(0.0f, 1.0f, 0.0f);//6
-		glTexCoord2f(0.0f, 1.0f);
+		glTexCoord2f(1.0f, 1.0f);
 		glVertex3f(hside, hside, -hside);
+
+		glNormal3f(0.0f, 1.0f, 0.0f);//8
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(-hside, hside, -hside);
 
 	}
 	glEnd();
