@@ -1,0 +1,7 @@
+﻿  OpenGL_TEXTURE.cpp
+  cCube.cpp
+c:\users\luisj\desktop\cg_demo\cg_demo\source\ccube.cpp(25): warning C4552: '-': el operador no tiene efecto; se esperaba un operador con efecto secundario
+c:\users\luisj\desktop\cg_demo\cg_demo\source\ccube.cpp(26): warning C4552: '-': el operador no tiene efecto; se esperaba un operador con efecto secundario
+c:\users\luisj\desktop\cg_demo\cg_demo\source\ccube.cpp(27): warning C4552: '-': el operador no tiene efecto; se esperaba un operador con efecto secundario
+  Generando código...
+  CG_Demo.vcxproj -> C:\Users\luisj\Desktop\CG_Demo\Debug\CG_Demo.exe
